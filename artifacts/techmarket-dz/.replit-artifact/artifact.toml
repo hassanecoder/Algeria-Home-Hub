@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "TechMarket Algeria"
+version = "1.0.0"
+id = "artifacts/techmarket-dz"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19438
+
+[services.development]
+run = "pnpm --filter @workspace/techmarket-dz run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/techmarket-dz", "run", "build" ]
+publicDir = "artifacts/techmarket-dz/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19438"
+BASE_PATH = "/"

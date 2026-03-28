@@ -1,0 +1,29 @@
+packages:
+  "framer-motion": "For page transitions and scroll-triggered animations"
+  "embla-carousel-react": "For image carousels in hero and product details"
+  "embla-carousel-autoplay": "For auto-playing carousels"
+  "react-hook-form": "For robust form state management in checkout"
+  "@hookform/resolvers": "Zod validation integration with react-hook-form"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility function to efficiently merge Tailwind CSS classes"
+  "date-fns": "For formatting dates in reviews and promotions"
+
+images:
+  - path: "artifacts/techmarket-dz/public/images/hero-bg.png"
+    description: "High-tech abstract background with deep blue and cyan glowing neon lights, modern sleek electronics vibe"
+    aspect_ratio: "21:9"
+  - path: "artifacts/techmarket-dz/public/images/promo-banner.png"
+    description: "Exciting sale banner background with 3D geometric shapes and vibrant magenta and blue colors, clean typography space"
+    aspect_ratio: "16:9"
+  - path: "artifacts/techmarket-dz/public/images/about-store.png"
+    description: "Modern premium electronics retail store interior, bright lighting, sleek displays, professional atmosphere"
+    aspect_ratio: "16:9"
+  - path: "artifacts/techmarket-dz/public/images/logo-icon.png"
+    description: "Minimal geometric logo mark for a tech store in bright blue and teal on transparent background"
+    aspect_ratio: "1:1"
+
+notes:
+  - Using generated API hooks from @workspace/api-client-react
+  - Expecting missing endpoints to return 404/500, which UI will handle gracefully
+  - Routing via wouter
+  - Tailwind v4 configured via standard @theme inline CSS
