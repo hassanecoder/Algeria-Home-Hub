@@ -1,0 +1,21 @@
+{
+  "name": "TechMarket Algeria",
+  "short_name": "TechMarket DZ",
+  "description": "Shop the latest electronics and technology products in Algeria. Find smartphones, laptops, gaming gear, and accessories at the best prices. TechMarket Algeria — your trusted tech marketplace.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#171717",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ]
+}
