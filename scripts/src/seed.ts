@@ -3,9 +3,20 @@ import { categoriesTable, brandsTable, productsTable, promotionsTable, reviewsTa
 import { sql } from "drizzle-orm";
 
 async function seed() {
-  console.log("🌱 Seeding TechMarket DZ database...");
+  const seedMode = process.env.SEED_MODE === "bootstrap" ? "bootstrap" : "reset";
+  console.log(`🌱 Seeding TechMarket DZ database in ${seedMode} mode...`);
 
-  await db.execute(sql`TRUNCATE TABLE reviews, orders, products, categories, brands, promotions RESTART IDENTITY CASCADE`);
+  if (seedMode === "bootstrap") {
+    const existing = await db.select().from(productsTable).limit(1);
+    if (existing.length > 0) {
+      console.log("Bootstrap seed skipped; products already present");
+      return;
+    }
+  }
+
+  if (seedMode === "reset") {
+    await db.execute(sql`TRUNCATE TABLE reviews, orders, products, categories, brands, promotions RESTART IDENTITY CASCADE`);
+  }
 
   // Categories
   const [smartphones, laptops, tvs, homeAppliances, smallAppliances, gaming, accessories] = await db.insert(categoriesTable).values([
